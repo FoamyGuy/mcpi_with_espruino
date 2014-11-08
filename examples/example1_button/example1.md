@@ -17,7 +17,7 @@ function onInit() {
 onInit();
 ```
 
-[Python Code: example1_button.py](https://github.com/FoamyGuy/mcpi_with_espruino/blob/master/example1_button.py)
+[Python Code: example1_button.py](example1_button.py)
 
 #To run:
 - Paste the espruino code from above into the right half of the Espruino web IDE, then press 'Send to espruino'
