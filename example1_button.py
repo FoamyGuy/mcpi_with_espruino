@@ -3,7 +3,7 @@ import serial
 import time
 
 # The location where redstone torch needs to spawn.
-a0 = (-112, 0, 62)  # <- YOU MUST SET THIS VALUE
+a0 = (-112, 0, 62)  # <- YOU MUST SET THIS VALUE (x,y,z)
 
 """
 Helper method: set_pin(pin,val)
