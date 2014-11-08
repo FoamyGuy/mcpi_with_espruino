@@ -17,4 +17,7 @@ RaspberryJuice exposes an easy to use python API to manipulate things inside of 
 
 #Example 1 - Redstone Button
 In this example we will hook up a physical button and have it turn on/off a redstone circuit in Minecraft.
-> Written with [StackEdit](https://stackedit.io/).
+Physical Circuit:
+![image](https://raw.githubusercontent.com/FoamyGuy/mcpi_with_espruino/master/imgs/example1_button.PNG)
+Redstone Circut:
+![image](https://raw.githubusercontent.com/FoamyGuy/mcpi_with_espruino/master/imgs/example1_redstone.PNG)
