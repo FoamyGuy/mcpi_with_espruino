@@ -8,7 +8,7 @@ You need a few things in place to begin.
 
  - Canarymod server with RaspberryJuice plugin running
  - Minecraft client running, connected to canarymod server.
- - Python installed on your machine
+ - Python installed on your machine + mcpi python module (included with RaspberryJuice project)
  - Espruino Web IDE
  - Espruino plugged in to PC
  
