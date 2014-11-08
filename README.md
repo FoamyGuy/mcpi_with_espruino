@@ -16,8 +16,23 @@ You need a few things in place to begin.
 RaspberryJuice exposes an easy to use python API to manipulate things inside of the minecraft world. Espruino exsposes a serial device that accepts and executes JavaScript commands. You can create python scripts that run commands on the Espruino, and then read the results, then use those results to manipulate things inside of minecraft.
 
 #Example 1 - Redstone Button
-In this example we will hook up a physical button and have it turn on/off a redstone circuit in Minecraft.
+In this example we will hook up a physical button and have it turn on/off a redstone circuit in Minecraft. We will continually poll the Espruino to find out if the button is being pressed. If it is we'll spawn a redstone torch, it is isn't we'll spawn air.
+
 Physical Circuit:
+
 ![image](https://raw.githubusercontent.com/FoamyGuy/mcpi_with_espruino/master/imgs/example1_button.PNG)
+
 Redstone Circut:
+
 ![image](https://raw.githubusercontent.com/FoamyGuy/mcpi_with_espruino/master/imgs/example1_redstone.PNG)
+
+Espruino Code:
+```
+function onInit() {
+    // Set the pin to use
+    var MY_PIN = A0;
+    // Set the mode on the pin.
+    pinMode(A0, "input_pulldown");
+}
+onInit();
+```
