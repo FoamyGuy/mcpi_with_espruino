@@ -17,3 +17,6 @@ RaspberryJuice exposes an easy to use python API to manipulate things inside of 
 
 #[Example 1 - Redstone Button](https://github.com/FoamyGuy/mcpi_with_espruino/blob/master/examples/example1_button/example1.md)
 In this example we will hook up a physical button and have it turn on/off a redstone circuit in Minecraft. We will continually poll the Espruino to find out if the button is being pressed. If it is we'll spawn a redstone torch, it is isn't we'll spawn air.
+
+#[Example 2 - Redstone Switch LED](https://github.com/FoamyGuy/mcpi_with_espruino/blob/master/examples/example2_led/example2.md)
+In this example we will hook up a redstone switch inside of Minecraft to control a physical LED on the espruino board.
