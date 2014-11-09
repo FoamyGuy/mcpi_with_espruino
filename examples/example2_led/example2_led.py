@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     # My espruino was COM23, and I had to use value 22 here.
     port = 22;
-
+    old_val = 0
 
     ser = serial.Serial(port, timeout=1)  # open first serial port
     print ser.portstr       # check which port was really used
@@ -44,14 +44,17 @@ if __name__ == "__main__":
             # Read the minecraft pin
             cur_val = get_pin(a0)
 
-            # write the result to the LED1 on Espruino
-            if int(cur_val):
-                # turn LED on
-                ser.write("digitalWrite(LED1, 1)\n")
-            else:
-                # turn LED off
-                ser.write("digitalWrite(LED1, 0)\n")
+            if cur_val != old_val:
+                # write the result to the LED1 on Espruino
+                if int(cur_val):
+                    # turn LED on
+                    ser.write("digitalWrite(LED1, 1)\n")
+                else:
+                    # turn LED off
+                    ser.write("digitalWrite(LED1, 0)\n")
 
+
+            old_val = cur_val
             time.sleep(.5)  # small sleep
 
     except KeyboardInterrupt:

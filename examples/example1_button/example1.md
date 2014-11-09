@@ -26,6 +26,6 @@ onInit();
 - run example1_button.py
 
 
-If everything worked then you should be able to press your physical button and see the red stone torch spawn.
+If everything worked then you should be able to press your physical button and see the red stone torch spawn, which will turn on the rest of your redstone circut.
 
 ![image](https://raw.githubusercontent.com/FoamyGuy/mcpi_with_espruino/master/imgs/example1_result.PNG)
