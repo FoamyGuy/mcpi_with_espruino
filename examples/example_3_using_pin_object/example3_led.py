@@ -1,30 +1,12 @@
 import mcpi.minecraft as minecraft
 import mcpi.block as Block
 import serial
+import mcpi.vec3 as vec3
 import time
+from mcpi_pin import McPin
 
 # The location where redstone torch needs to spawn.
-a0 = (-112, 0, 62)  # <- YOU MUST SET THIS VALUE (x,y,z)
-
-
-"""
-Helper method: get_pin(pin)
-
-Returns whether the minecraft pin is turned on or off (based on redstone torch type)
-
-Block(76, 1) -> Redstone Toch ON
-Block(75, 1) -> Redstone Toch OFF
-"""
-def get_pin(pin):
-    block = mc.getBlockWithData(pin)
-    print(block)
-    if block.id == 76:
-        return 1
-    elif block.id == 75:
-        return 0
-    else:
-        return -1
-
+location = vec3.Vec3(-112, 0, 62)  # <- YOU MUST SET THIS VALUE (x,y,z)
 
 if __name__ == "__main__":
 
@@ -38,12 +20,13 @@ if __name__ == "__main__":
     # Create mc object.
     mc = minecraft.Minecraft.create()
 
+    pin_led1 = McPin(mc, 'a0', 0, location)
 
     # Main loop
     try:
         while True:
             # Read the minecraft pin
-            cur_val = get_pin(a0)
+            cur_val = pin_led1.read_pin()
 
             if cur_val != old_val:
                 # write the result to the LED1 on Espruino

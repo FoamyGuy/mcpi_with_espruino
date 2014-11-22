@@ -3,7 +3,8 @@ import serial
 import time
 
 # The location where redstone torch needs to spawn.
-a0 = (-112, 0, 62)  # <- YOU MUST SET THIS VALUE (x,y,z)
+#a0 = (-112, 0, 62)  # <- YOU MUST SET THIS VALUE (x,y,z)
+a0 = (-112, 0, 65)
 
 """
 Helper method: set_pin(pin,val)
@@ -32,7 +33,37 @@ if __name__ == "__main__":
 
     # Main loop
     try:
+
+        #Modified code from main loop:
+        #s = serial.Serial(22)
+
+        """
+        #Modified code from thread reading the serial port
+        while 1:
+            tdata = s.read()           # Wait forever for anything
+            time.sleep(.1)              # Sleep (or inWaiting() doesn't give the correct value)
+            data_left = s.inWaiting()  # Get the number of characters ready to be read
+            tdata += s.read(data_left) # Do the read and combine it with the first character
+            print(tdata)
+
+            if '1' in tdata:
+                print("set on")
+                set_pin(a0, 1)
+
+
+            else:
+                print("set off")
+                set_pin(a0, 0)
+
+
+        """
         while True:
+
+            inc_command = ser.readline()
+
+            print(inc_command)
+
+
 
             # Send command to read the pin
             ser.write("digitalRead(A0)\n")
@@ -43,10 +74,13 @@ if __name__ == "__main__":
             print(ans)
 
             # set the minecraft pin according to value read.
-            if int(ans):
-                set_pin(a0, 1)
-            else:
-                set_pin(a0, 0)
+            try:
+                if int(ans):
+                    set_pin(a0, 1)
+                else:
+                    set_pin(a0, 0)
+            except:
+                pass
 
 
             time.sleep(.2)  # small sleep

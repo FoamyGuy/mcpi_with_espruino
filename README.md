@@ -20,3 +20,6 @@ In this example we will hook up a physical button and have it turn on/off a reds
 
 #[Example 2 - Redstone Switch LED](examples/example2_led/example2.md)
 In this example we will hook up a redstone switch inside of Minecraft to control a physical LED on the espruino board.
+
+#[Example 3 - Using the McPin object](examples/example3_using_pin_object/example3.md)
+This example is a re-write of examples 1 and 2 using the McPin object
