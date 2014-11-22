@@ -57,6 +57,10 @@ class McPin:
 
         self.value = new_val
 
+
+"""
+Normally we will use McPin from another script. But you can put code to test it here if you like.
+"""
 if __name__ == "__main__":
     mc = minecraft.Minecraft.create()
     test_pin = McPin(mc, "test", 1, vec3.Vec3(-112, 0, 65))
