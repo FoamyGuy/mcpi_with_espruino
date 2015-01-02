@@ -1,3 +1,4 @@
+// map to hold the frequency of each note.
 var notes = { "c3": 130.81,
               "d3": 146.83,
               "e3": 164.81,
@@ -20,10 +21,11 @@ var notes = { "c3": 130.81,
               "a5": 880.00,
               "b5": 987.77};
 
-
+// optional scale array to represent two full octaves.
 var scale = ['c4', 'd4', 'e4', 'f4', 'g4', 'a4', 'b4',
              'c5', 'd5', 'e5', 'f5', 'g5', 'a5', 'b5'];
 
+// call this method and pass it a note i.e. 'c4' to have it play.
 function playNote(note){
   print("playing note: " + note);
   analogWrite(A0, 0.05, {freq: notes[note]});
@@ -36,6 +38,7 @@ function playNote(note){
   }
 }
 
+// rest (silence) you can optionally pass it how long to rest  in seconds.
 function rest(time){
   analogWrite(A0, 0);
   var endTime = getTime() + time;
@@ -46,6 +49,7 @@ function rest(time){
   }
 }
 
+// Test function that playes the two octave scale up and then down.
 function playScale(){
   var i = 0;
   while (i < scale.length){
@@ -62,8 +66,5 @@ function playScale(){
   analogWrite(A0, 0);
 }
 
-function createFunc(note){
-   return function() { playNote(note); };
-}
-
+//Uncomment to test:
 //playScale();
