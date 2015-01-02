@@ -3,8 +3,11 @@
 In this example we will hook a speaker to the espruino and use it to play
 tones that correspond to musical notes.
 
+Circut:
+![image](https://raw.githubusercontent.com/FoamyGuy/mcpi_with_espruino/master/imgs/example4_circut.PNG)
+
 Python code:
 - [example4_piano.py](example4_piano.py)
 
 JS code (to be executed on espruino)
-- [espruino_musical_notes.js](espruino_musical_notes.js)
+- [espruino_music_notes.js](espruino_music_notes.js)
