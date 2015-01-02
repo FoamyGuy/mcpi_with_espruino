@@ -28,7 +28,7 @@ var scale = ['c4', 'd4', 'e4', 'f4', 'g4', 'a4', 'b4',
 // call this method and pass it a note i.e. 'c4' to have it play.
 function playNote(note){
   print("playing note: " + note);
-  analogWrite(A0, 0.05, {freq: notes[note]});
+  analogWrite(A0, 0.5, {freq: notes[note]});
   var startTime = getTime();
   var endTime = startTime + 0.1;
   while(getTime() < endTime){
