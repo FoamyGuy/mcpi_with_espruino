@@ -67,4 +67,4 @@ function playScale(){
 }
 
 //Uncomment to test:
-playScale();
+//playScale();
