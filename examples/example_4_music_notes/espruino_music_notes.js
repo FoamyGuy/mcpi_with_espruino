@@ -53,13 +53,13 @@ function rest(time){
 function playScale(){
   var i = 0;
   while (i < scale.length){
-    playNote(i);
+    playNote(scale[i]);
     rest(0.05);
     i++;
   }
   i -= 2;
   while (i >= 0){
-    playNote(i);
+    playNote(scale[i]);
     rest(0.05);
     i--;
   }
@@ -67,4 +67,4 @@ function playScale(){
 }
 
 //Uncomment to test:
-//playScale();
+playScale();
