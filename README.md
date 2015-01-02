@@ -24,5 +24,5 @@ In this example we will hook up a redstone switch inside of Minecraft to control
 #[Example 3 - Using the McPin object](examples/example_3_using_pin_object/README.md)
 This example is a re-write of examples 1 and 2 using the McPin object
 
-#[Example 4 - Musical Notes](examples/example4_music_notes/README.md)
+#[Example 4 - Musical Notes](examples/example_4_music_notes/README.md)
 In this example we will use a hardware speaker to play musical notes from a virtual piano.
