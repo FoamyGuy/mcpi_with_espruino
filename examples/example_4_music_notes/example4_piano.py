@@ -1,5 +1,10 @@
-#www.stuffaboutcode.com
-#Raspberry Pi, Minecraft Piano - Different blocks back different tones when hit!
+"""
+Adapted from 'Raspberry Pi - Minecraft Piano' created by Martin O'Hanlon
+Original: http://www.stuffaboutcode.com/2013/06/raspberry-pi-minecraft-piano.html
+
+Modified by: Tim Cocks
+This version plays the notes through a speaker with the help of Espruino.
+"""
 
 #import the minecraft.py module from the minecraft directory
 import mcpi.minecraft as minecraft
@@ -7,14 +12,14 @@ import mcpi.minecraft as minecraft
 import mcpi.block as block
 #import time, so delays can be used
 import time
-
-
+#import serial, so we can communicate with Espruino
+import serial
 
 if __name__ == "__main__":
 
-    import serial
-    ser = serial.Serial(22, timeout=1)  # open first serial port
-    print ser.portstr       # check which port was really used
+    # open up serial connection to espruino.
+    ser = serial.Serial(22, timeout=1)  # YOU MIGHT HAVE TO CHANGE THIS VALUE!
+    print (ser.portstr)       # check which port was really used
 
     #Connect to minecraft by creating the minecraft object
     # - minecraft needs to be running and in a game
@@ -47,12 +52,14 @@ if __name__ == "__main__":
                 # for each block that has been hit
                 for blockHit in blockHits:
                     #If the block hit type (DIRT, WOOD, etc) is in the
-                    # blocksToWavc dictionary - play the WAV
+                    # blocksToWavc dictionary - play the note
                     blockType = mc.getBlock(blockHit.pos.x, blockHit.pos.y, blockHit.pos.z)
                     if (blockType in blocksToNotes.keys()):
                         noteToPlay = blocksToNotes[blockType]
+
+                        # Call playNote() on the espruino and pass it the appropriate value
                         ser.write("playNote('%s');rest();\n" % noteToPlay)
-            #sleep for a short time        
+            # sleep for a short time
             time.sleep(0.1)
     except KeyboardInterrupt:
         print("stopped")
