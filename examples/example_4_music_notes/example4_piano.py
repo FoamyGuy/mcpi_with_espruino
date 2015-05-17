@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     #block type to sound obj
     blocksToNotes = {block.STONE.id: 'f3',
-                    block.GRASS.id: 'g3',
+                    block.DIAMOND_BLOCK.id: 'g3',
                     block.WOOD.id: 'a3',
                     block.BOOKSHELF.id: 'b3',  # Changed because dirt was becoming grass.
                     block.SAND.id: 'c4',

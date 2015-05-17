@@ -6,12 +6,12 @@ import time
 from mcpi_pin import McPin
 
 # The location where redstone torch needs to spawn.
-location = vec3.Vec3(-112, 0, 62)  # <- YOU MUST SET THIS VALUE (x,y,z)
+location = vec3.Vec3(-22,1,-40)  # <- YOU MUST SET THIS VALUE (x,y,z)
 
 if __name__ == "__main__":
 
     # My espruino was COM23, and I had to use value 22 here.
-    port = 22;
+    port = 28;
     old_val = 0
 
     ser = serial.Serial(port, timeout=1)  # open first serial port
