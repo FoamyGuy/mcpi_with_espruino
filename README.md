@@ -26,3 +26,6 @@ This example is a re-write of examples 1 and 2 using the McPin object
 
 #[Example 4 - Musical Notes](examples/example_4_music_notes/README.md)
 In this example we will use a hardware speaker to play musical notes from a virtual piano.
+
+#[Example 5 - Virtual Pico](examples/example_5_virtual_pico/README.md)
+Create an Espruino Pico inside the game that controls a hardware Espruino Pico.
